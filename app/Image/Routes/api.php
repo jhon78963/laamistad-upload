@@ -1,0 +1,13 @@
+<?php
+
+use App\Image\Controllers\ImageController;
+use Illuminate\Support\Facades\Route;
+
+Route::middleware('jwt')
+    ->controller(ImageController::class)->group(function () {
+        Route::post('/images/upload', 'upload');
+        Route::post('/images/multiple-upload', 'multipleUpload');
+        Route::delete('/images/{path}', 'delete')->where('path', '.*');
+        Route::get('/images', 'getAll');
+        Route::get('/images/{image}', 'get');
+    });
