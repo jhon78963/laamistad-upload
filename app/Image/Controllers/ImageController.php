@@ -17,7 +17,7 @@ use DB;
 
 class ImageController extends Controller
 {
-    private string $images_path = 'images/products';
+    private string $images_path = 'images';
     protected FileService $fileService;
     protected ImageService $imageService;
     protected SharedService $sharedService;
